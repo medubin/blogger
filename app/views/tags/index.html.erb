@@ -5,7 +5,9 @@
     <li>
       <%= link_to tag.name, tag_path(tag) %>
         &nbsp
-      <%= link_to "destroy", tag_path(tag), :method => :delete %>
+        <% if logged_in? %>
+         <%= link_to "destroy", tag_path(tag), :method => :delete %>
+        <% end %>
     </li>
   <% end %>
 </ul>
